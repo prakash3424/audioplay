@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'number_audio.dart';
 import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -54,7 +53,9 @@ class _HomePageState extends State<HomePage> {
                     height: 50.0,
                     width: 100.0,
                     child: ElevatedButton(
-                      onPressed: played(numberList[i].audioUri),
+                      onPressed: () {
+                        played(numberList[i].audioUri);
+                      },
                       child: Text(
                         numberList[i].buttonText,
                         style: TextStyle(color: Colors.white, fontSize: 20.0),
