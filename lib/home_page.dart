@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
     NumberAudio("one.wav", Colors.red, "One"),
     NumberAudio("two.wav", Colors.orange, "Two"),
     NumberAudio("three.wav", Colors.purple, "Three"),
-    NumberAudio("four.wav", Colors.orange, "Four"),
+    NumberAudio("four.wav", Colors.deepOrange, "Four"),
     NumberAudio("five.wav", Colors.pink, "Five"),
     NumberAudio("six.wav", Colors.green, "Six"),
     NumberAudio("seven.wav", Colors.yellow, "Seven"),
@@ -52,13 +52,17 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (context, i) => SizedBox(
                     height: 50.0,
                     width: 100.0,
-                    child: ElevatedButton(
+                    child: MaterialButton(
                       onPressed: () {
                         played(numberList[i].audioUri);
                       },
+                      color: numberList[i].buttonColor,
                       child: Text(
                         numberList[i].buttonText,
-                        style: TextStyle(color: Colors.white, fontSize: 20.0),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                        ),
                       ),
                     ),
                   ),
